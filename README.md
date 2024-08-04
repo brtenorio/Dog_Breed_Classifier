@@ -1,6 +1,6 @@
 # Plant Seedlings
 
-Plant Seedlings is a Convolutional Neural Network (CNN) application for recognizing plant seeds. This project uses Streamlit for the web interface and Poetry for dependency management.
+og_Breed_Classifier is a Convolutional Neural Network (CNN) application for recognizing among 120 dog breeds. This project uses Streamlit for the web interface and Poetry for dependency management.
 
 ## Table of Contents
 
@@ -17,8 +17,8 @@ To install and set up the project, follow these steps:
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/brtenorio/plant_seedlings.git
-    cd plant_seedlings
+    git clone https://github.com/brtenorio/Dog_Breed_Classifier
+    cd og_Breed_Classifier
     ```
 
 2. **Install Poetry (if not already installed):**

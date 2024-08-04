@@ -1,7 +1,7 @@
-# Makefile for plant_seedlings project
+# Makefile for the Dog_Breed_Classifier project
 
 # Variables
-PROJECT_NAME = Plant_Seedlings
+PROJECT_NAME = Dog_Breed_Classifier
 PYTHON = python3
 PIP = pip
 POETRY = poetry
@@ -29,7 +29,7 @@ test:
 
 retrain-model:
 	@echo "Retrain and regenerate model file"
-	$(POETRY) run python3 plant_seedlings/main.py
+	$(POETRY) run python3 model_training/main.py
 
 docker-build:
 	@echo "Building Docker image..."
@@ -43,10 +43,18 @@ docker-test:
 	@echo "Running tests in Docker..."
 	docker-compose run test
 
-# poetry cache clear --all .
+
 clean:
 	@echo "Cleaning up..."
-	$(POETRY) env remove $(PYTHON) 
+	$(POETRY) env remove $(PYTHON)
+
+clear-cache:
+	@echo "Cleaning up..."
+	$(POETRY) cache clear --all .
+
+docker-down:
+        @echo "Running application in Docker..."
+        docker-compose down
 
 # Additional target for development purposes
 dev-install:

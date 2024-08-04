@@ -1,11 +1,12 @@
 [tool.poetry]
-name = "plant_seedlings"
+name = "dog-breed-classifier"
 version = "0.1.0"
-description = "CNN for recognizing plant seeds"
+description = "Compute Vision project for classifying among 120 dogs breeds"
 authors = ["brtenorio <b.nunes.bruno@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">3.9.7,<3.12"
+python = ">3.9.7,<3.11"
 ipykernel = "^6"
 numpy = "^1"
 matplotlib = "^3"
@@ -20,8 +21,7 @@ pytest = "^8.3.2"
 setuptools = "^72.1.0"
 wheel = "^0.43.0"
 
-[tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
