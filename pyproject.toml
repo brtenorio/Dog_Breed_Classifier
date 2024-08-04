@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "plant_seedlings"
+version = "0.1.0"
+description = "CNN for recognizing plant seeds"
+authors = ["brtenorio <b.nunes.bruno@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">3.9.7,<3.12"
+ipykernel = "^6"
+numpy = "^1"
+matplotlib = "^3"
+streamlit = "^1.37.0"
+tensorflow = "2.15.0"
+tensorflow-macos = "2.15.0"
+scikit-learn = "^1.5"
+scipy = "^1"
+joblib = "^1.4"
+threadpoolctl = "^3.5"
+pytest = "^8.3.2"
+setuptools = "^72.1.0"
+wheel = "^0.43.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
