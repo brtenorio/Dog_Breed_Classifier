@@ -1,7 +1,11 @@
 from dog_breed_classifier.config import *
-from dog_breed_classifier.data_generator import *
 
-def train_model(model):
+def train_model(model, train_generator, validation_generator):
+        """
+        This function trains the model using the training and validation generators.
+        """
+        steps_per_epoch_training = len(train_generator)
+        steps_per_epoch_validation = len(validation_generator)
         model.fit(train_generator,
             steps_per_epoch=steps_per_epoch_training,
             epochs=num_epochs,

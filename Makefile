@@ -39,10 +39,10 @@ docker-run:
 	@echo "Running application in Docker..."
 	docker-compose up app
 
-docker-test:
-	@echo "Running tests in Docker..."
-	docker-compose run test
-
+# to fix: test with docker fails due to data set directory not found
+#docker-test:
+#	@echo "Running tests in Docker..."
+#	docker-compose run test
 
 clean:
 	@echo "Cleaning up..."
@@ -53,8 +53,8 @@ clear-cache:
 	$(POETRY) cache clear --all .
 
 docker-down:
-        @echo "Running application in Docker..."
-        docker-compose down
+	@echo "Running application in Docker..."
+	docker-compose down
 
 # Additional target for development purposes
 dev-install:
