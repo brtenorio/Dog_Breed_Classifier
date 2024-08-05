@@ -29,7 +29,7 @@ num_epochs = 18
 
 # set parameters to save the trained model
 import saved_models
-# The saved_models directory can be found after importing the module with the list [saved_models.__path__]
+# The saved_models directory can be found after importing the module with the list element saved_models.__path__[0]
 model_dir = saved_models.__path__[0]
 model_name = "model.h5"
 file_name = os.path.join(model_dir, model_name)
