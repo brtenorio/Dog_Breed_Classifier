@@ -1,6 +1,8 @@
-# Plant Seedlings
+# Dog Breed Classifier
 
-og_Breed_Classifier is a Convolutional Neural Network (CNN) application for recognizing among 120 dog breeds. This project uses Streamlit for the web interface and Poetry for dependency management.
+![](pipoca.jpg)
+
+Dog_Breed_Classifier is a Convolutional Neural Network (CNN) based on the VGG16 model application for recognizing among 120 dog breeds. This project uses Streamlit for the web interface and Poetry for dependency management.
 
 ## Table of Contents
 
@@ -18,7 +20,7 @@ To install and set up the project, follow these steps:
 1. **Clone the repository:**
     ```sh
     git clone https://github.com/brtenorio/Dog_Breed_Classifier
-    cd og_Breed_Classifier
+    cd dog_Breed_Classifier
     ```
 
 2. **Install Poetry (if not already installed):**
@@ -37,4 +39,4 @@ To run the application, use:
 
 ```sh
 make run
-
+```
