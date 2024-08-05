@@ -29,7 +29,7 @@ test:
 
 retrain-model:
 	@echo "Retrain and regenerate model file"
-	$(POETRY) run python3 model_training/main.py
+	$(POETRY) run python3 dog_breed_classifier/main.py
 
 docker-build:
 	@echo "Building Docker image..."
