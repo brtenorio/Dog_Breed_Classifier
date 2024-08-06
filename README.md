@@ -45,6 +45,8 @@ To retrain the model, if needed, use:
 
     make retrain-model
 
+Notice the trained model is already available in `saved_models/model.h5`. 
+
 ## Running Tests
 
 To test the model, use:
