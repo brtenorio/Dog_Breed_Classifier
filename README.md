@@ -20,7 +20,7 @@ To install and set up the project, follow these steps:
 1. **Clone the repository:**
     ```sh
     git clone https://github.com/brtenorio/Dog_Breed_Classifier
-    cd dog_Breed_Classifier
+    cd Dog_Breed_Classifier
     ```
 
 2. **Install Poetry (if not already installed):**
