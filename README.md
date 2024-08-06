@@ -2,7 +2,7 @@
 
 ![](classifier.jpg)
 
-Dog_Breed_Classifier is a Convolutional Neural Network (CNN) based on the VGG16 model application for recognizing among 120 dog breeds. This project uses Streamlit for the web interface and Poetry for dependency management.
+Dog_Breed_Classifier is a Convolutional Neural Network (CNN) application based on the VGG16 model for recognizing among 120 dog breeds. This project uses Streamlit for the web interface, Poetry for dependency management, and Docker to containerize the app.
 
 ## Table of Contents
 
@@ -37,6 +37,27 @@ To install and set up the project, follow these steps:
 
 To run the application, use:
 
-```sh
-make run
-```
+    make run
+
+## Development
+
+To retrain the model, if needed, use:
+
+    make retrain-model
+
+## Running Tests
+
+To test the model, use:
+
+    make test
+
+## Docker
+
+To containerize the application, use:
+
+    make docker-build
+
+followed by
+    
+    make docker-run
+
