@@ -63,5 +63,5 @@ if __name__=="__main__":
 		prediction = class_names[ind]
 			
 		c2.header('Output')
-		c2.subheader('The seed you have is :')
+		c2.subheader('The dogs breed is :')
 		c2.write(prediction)

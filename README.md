@@ -1,6 +1,6 @@
 # Dog Breed Classifier
 
-![](pipoca.jpg)
+![](classifier.jpg)
 
 Dog_Breed_Classifier is a Convolutional Neural Network (CNN) based on the VGG16 model application for recognizing among 120 dog breeds. This project uses Streamlit for the web interface and Poetry for dependency management.
 
