@@ -9,7 +9,7 @@ POETRY = poetry
 # Targets
 .PHONY: all setup install run clean test
 
-all: setup install
+all: setup install test
 
 setup:
 	@echo "Setting up virtual environment..."
@@ -44,9 +44,9 @@ docker-down:
 	docker-compose down
 
 # to fix: test with docker fails due to data set directory not found
-#docker-test:
-#	@echo "Running tests in Docker..."
-#	docker-compose run test
+docker-test:
+	@echo "Running tests in Docker..."
+	docker-compose run test
 
 clean:
 	@echo "Cleaning up..."

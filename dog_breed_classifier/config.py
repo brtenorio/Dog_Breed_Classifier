@@ -1,15 +1,23 @@
 import os
 
+"""This module contains the configuration parameters for the dog breed classifier model"""
+
 # set a random state number
 rs = 42
 
 # set the path for the data base containing the images
 file_path = "/Users/brncat/Downloads/AltaVerde/GitHub/Dog_Breed_Dataset"
 
+#check existence of the dataset path: file_path
+if os.path.isdir(file_path):
+    print("data set found!")
+else:
+    raise Exception("data set directory not found!")
+
 # number of classes
 num_classes = 120
 
-# Define paths
+# # Define paths
 main_dir = os.path.join(file_path,'main')
 train_dir = os.path.join(file_path,'train')
 val_dir = os.path.join(file_path,'valid')
@@ -25,16 +33,7 @@ image_resize = 224
 batch_size_training = 56
 batch_size_validation = 56
 
-num_epochs = 18
+num_epochs = 16 
 
-# set parameters to save the trained model
-import saved_models
-# The saved_models directory can be found after importing the module with the list element saved_models.__path__[0]
-model_dir = saved_models.__path__[0]
-model_name = "model.h5"
-file_name = os.path.join(model_dir, model_name)
-#check existence of model_dir
-if os.path.isdir(model_dir):
-    pass
-else:
-    raise Exception("saved_models directory not found!")
+# Define the path for the model
+file_name = "saved_models/model.h5"

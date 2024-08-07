@@ -6,12 +6,7 @@ def data_generator():
     """
     This function generates the data generators for the training, validation and test sets.
     """
-    #check existence of the dataset path: file_path
-    if os.path.isdir(file_path):
-        print("data set found!")
-    else:
-        raise Exception("data set directory not found!")
-
+    
     # Instantiate the image data generator
     data_generator = ImageDataGenerator(preprocessing_function=preprocess_input)
 
