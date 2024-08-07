@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from dog_breed_classifier.config import *
 
 def create_dir():
+	"""This function creates the train, valid, and test directories, if needed, and splits the data into them."""
 	if os.path.isdir(file_path):
 		if os.path.isdir(train_dir):
 			print("train dir exist")
