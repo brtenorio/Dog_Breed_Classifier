@@ -67,3 +67,9 @@ followed by
     
     make docker-run-app
 
+## API built with FastAPI
+
+To run the API with docker, use
+
+    make docker-run-api
+
