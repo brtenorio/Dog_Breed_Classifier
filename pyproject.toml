@@ -19,6 +19,9 @@ threadpoolctl = "^3.5"
 pytest = "^8.3.2"
 setuptools = "^72.1.0"
 wheel = "^0.43.0"
+fastapi = "^0"
+uvicorn = "0.29.0"
+python-multipart = "^0.0.9"
 
 
 [build-system]

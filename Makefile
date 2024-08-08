@@ -19,9 +19,13 @@ install:
 	@echo "Installing dependencies..."
 	$(POETRY) install
 
-run:
+run-app:
 	@echo "Running the application..."
 	$(POETRY) run streamlit run application/app.py --server.port 8080
+
+run-api:
+	@echo "Running the API..."
+	$(POETRY) run $(PYTHON) api/api.py
 
 test:
 	@echo "Running tests..."
@@ -29,24 +33,27 @@ test:
 
 retrain-model:
 	@echo "Retrain and regenerate model file"
-	$(POETRY) run python3 dog_breed_classifier/main.py
+	$(POETRY) run $(PYTHON) dog_breed_classifier/main.py
 
 docker-build:
 	@echo "Building Docker image..."
 	docker-compose build
 
-docker-run:
+docker-run-app:
 	@echo "Running application in Docker..."
 	docker-compose up app
+
+docker-run-api:
+	@echo "Running application in Docker..."
+	docker-compose up api
+
+docker-test:
+	@echo "Running tests in Docker..."
+	docker-compose run test
 
 docker-down:
 	@echo "Running application in Docker..."
 	docker-compose down
-
-# to fix: test with docker fails due to data set directory not found
-docker-test:
-	@echo "Running tests in Docker..."
-	docker-compose run test
 
 clean:
 	@echo "Cleaning up..."
@@ -56,7 +63,3 @@ clear-cache:
 	@echo "Cleaning up..."
 	$(POETRY) cache clear --all .
 
-# Additional target for development purposes
-dev-install:
-	@echo "Installing development dependencies..."
-	$(POETRY) install --with dev

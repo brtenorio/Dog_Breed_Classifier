@@ -13,6 +13,7 @@ def test_model():
 
     # Load the image
     test_file = 'tests/test_images/great_dane.jpg'
+    test_file = os.path.normpath(test_file)
     image= Image.open(test_file)
 
     # Instantiate ImageDataGenerator to perform pre-processing on the loaded image
@@ -26,6 +27,7 @@ def test_model():
     img_transformed = image_generator.flow(x)
 
     file_name = "saved_models/model.h5"
+    file_name = os.path.normpath(file_name)
     if os.path.isfile(file_name):
         pass
     else:

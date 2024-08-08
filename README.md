@@ -41,7 +41,7 @@ To install and set up the project, follow these steps:
 
 To run the application, use:
 
-    make run
+    make run-app
 
 ## Development
 
@@ -65,5 +65,5 @@ To containerize the application, use:
 
 followed by
     
-    make docker-run
+    make docker-run-app
 
