@@ -23,45 +23,45 @@ if __name__=="__main__":
 		
 		# reshape it to 224,224,3 and display
 		image_resized = image.resize((image_resize, image_resize))
+
+		c1.header('Input Image')
+
+		# display the original image
 		c1.image(image_resized)
-		
-		image_resized = np.array(image_resized) # as numpy array
+		image_resized = np.array(image_resized) 
 		
 		# use image_generator to transform the image_transformed
 		x = np.expand_dims(image_resized, axis=0)
 		img_transformed = image_generator.flow(x)
 		
-		c1.header('Input Image')
-		#c1.write(y.shape)
-		
+		# Get the path to the model file and load it
 		file_name = "saved_models/model.h5"
+		file_name = os.path.normpath(file_name)
 		if os.path.isfile(file_name):
 			pass
 		else:
 			raise Exception("model not found!")
-
-		#load the model
 		model = load_model(file_name)
 		
-		# Evaluate on test_generator
+		# Predict the image using the model
 		eval = model.predict(img_transformed)
-		# transforms smt like [0.33,0.67] into [0,1]
-
-		pred = np.argmax(eval,axis=-1) #(eval_vgg > 0.5).astype("int32")
+		pred = np.argmax(eval,axis=-1)
 
 		# Read external file class_names.txt as dictionary class_names
 		class_names = {}
 		class_names_file = os.path.join(os.path.dirname(__file__) , 'class_names.txt')
 
+		# Read the class names from the class_names.txt file
 		with open(class_names_file, 'r') as file:
 			for line in file:
 				key, value = line.strip().split(':')
 				class_names[int(key)] = value.strip()
 
-		print("pred_vgg", int(pred),)
+		# Get the predicted class name
 		ind = int(pred)
 		prediction = class_names[ind]
+		prediction = prediction.replace("_", " ")
 			
 		c2.header('Output')
 		c2.subheader('The dogs breed is :')
-		c2.write(prediction)
+		c2.write(prediction )

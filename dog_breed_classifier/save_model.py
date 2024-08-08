@@ -8,6 +8,7 @@ def save_model(model):
     """
 
     file_name = "saved_models/model.h5"
+    file_name = os.path.normpath(file_name)
     if os.path.isdir("saved_models"):
         if os.path.isfile(file_name):
             os.remove(file_name)

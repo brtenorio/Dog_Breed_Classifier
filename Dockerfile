@@ -21,5 +21,5 @@ RUN python3 -m pip install -r requirements.txt
 EXPOSE 8080
 
 # Command to run the application
-CMD ["streamlit", "run", "application/app.py", "--server.port", "8080"]
+# CMD ["streamlit", "run", "application/app.py", "--server.port", "8080"]
 
