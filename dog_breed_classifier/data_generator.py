@@ -1,5 +1,5 @@
 from keras.preprocessing.image import ImageDataGenerator
-from keras.applications.vgg16 import preprocess_input
+from keras.applications.resnet50 import preprocess_input
 from dog_breed_classifier.config import *
 
 def data_generator():

@@ -11,7 +11,7 @@ def process_image(upload):
     import io
     from PIL import Image
     from keras.preprocessing.image import ImageDataGenerator
-    from keras.applications.vgg16 import preprocess_input
+    from keras.applications.resnet50 import preprocess_input
     from keras.models import load_model
 
     # Open the image with PIL by reading the uploaded image as bytes
@@ -19,7 +19,7 @@ def process_image(upload):
 
     # Instantiate ImageDataGenerator to perform pre-processing on the loaded image
     image_generator = ImageDataGenerator(preprocessing_function=preprocess_input)
-    image_resize = 224 # the target size of VGG
+    image_resize = 224 # the target size 
     image_resized = image.resize((image_resize, image_resize))
     image_resized = np.array(image_resized)
 

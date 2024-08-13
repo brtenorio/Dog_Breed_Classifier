@@ -5,7 +5,7 @@ if __name__=="__main__":
 	import numpy as np
 	from PIL import Image
 	from keras.preprocessing.image import ImageDataGenerator
-	from keras.applications.vgg16 import preprocess_input
+	from keras.applications.resnet50 import preprocess_input
 	from keras.models import load_model
 	
 	#1. Create a streamlit title widget, this will be shown first
@@ -19,7 +19,7 @@ if __name__=="__main__":
 		
 		# Instantiate ImageDataGenerator to perform pre-processing on the loaded image
 		image_generator = ImageDataGenerator(preprocessing_function=preprocess_input)
-		image_resize = 224 # the target size of VGG
+		image_resize = 224 # the target size 
 		
 		# reshape it to 224,224,3 and display
 		image_resized = image.resize((image_resize, image_resize))
