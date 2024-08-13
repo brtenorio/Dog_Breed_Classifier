@@ -22,4 +22,3 @@ EXPOSE 8080
 
 # Command to run the application
 CMD ["streamlit", "run", "application/app.py", "--server.port", "8080"]
-
