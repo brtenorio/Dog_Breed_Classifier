@@ -8,7 +8,8 @@ def get_model():
 	Load the ResNet50 model with ImageNet weights and add a few layers on top of it.
 	"""
 
-	base_model = ResNet50(weights='imagenet', include_top=False) #imports the ResNet50 model and discards the last layer.
+	base_model = ResNet50(input_shape=[image_resize, image_resize, 3],
+							weights='imagenet', include_top=False) #imports the ResNet50 model and discards the last layer.
 	x = base_model.output # (None, None, None, 512)
 	x = GlobalAveragePooling2D()(x) # (None, 512)
 
