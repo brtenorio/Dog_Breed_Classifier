@@ -1,25 +1,22 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.11-slim
 
-# Set the working directory inside the container
-WORKDIR /app
-
 # Update pip
 RUN pip install --upgrade pip
 
 # Install HDF5 and its dependencies using apt
 RUN apt-get update && apt-get install -y pkg-config gcc libhdf5-dev
 
-# Install git LFS for large files
+# Isntall git large file system
 RUN apt-get install git-lfs -y
 
-# Track file from GitHub LFS
 RUN git clone https://github.com/brtenorio/Dog_Breed_Classifier.git
 
-RUN cd Dog_Breed_Classifier && git lfs fetch --all && cp saved_models/model.h5 ../saved_models/model.h5 && cd ..
+# Set the cloned repo the working directory inside the container
+WORKDIR Dog_Breed_Classifier
 
-# Copy the rest of the application code to the working directory
-COPY . /app
+# Fetch large files
+RUN git lfs fetch --all 
 
 # Install the app dependencies 
 RUN python3 -m pip install -r requirements.txt
