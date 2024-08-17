@@ -1,6 +1,6 @@
 # Dog Breed Classifier
 
-[View and Use the app with this link](dogbreedclassifier-production.up.railway.app)
+[View and Use the app with this link](https://dogbreedclassifier-production.up.railway.app/)
 
 ![](classifier.jpg)
 
