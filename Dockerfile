@@ -14,7 +14,9 @@ RUN apt-get update && apt-get install -y pkg-config gcc libhdf5-dev
 RUN apt-get install git-lfs -y
 
 # Track file from GitHub LFS
-RUN git lfs fetch --all
+RUN git clone https://github.com/brtenorio/Dog_Breed_Classifier.git
+
+RUN cd Dog_Breed_Classifier && git lfs fetch --all && cp saved_models/model.h5 ../saved_models/model.h5 && cd ..
 
 # Copy the rest of the application code to the working directory
 COPY . /app
