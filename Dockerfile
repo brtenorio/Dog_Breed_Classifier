@@ -10,9 +10,14 @@ RUN pip install --upgrade pip
 # Install HDF5 and its dependencies using apt
 RUN apt-get update && apt-get install -y pkg-config gcc libhdf5-dev
 
+# Install git LFS for large files
+RUN apt-get install git-lfs -y
+
+# Track file from GitHub LFS
+RUN git lfs fetch --all
+
 # Copy the rest of the application code to the working directory
 COPY . /app
-WORKDIR /app
 
 # Install the app dependencies 
 RUN python3 -m pip install -r requirements.txt
