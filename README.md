@@ -4,7 +4,7 @@
 
 ![](classifier.jpg)
 
-Dog_Breed_Classifier is a Convolutional Neural Network (CNN) application based on the VGG16 model for recognizing among 120 dog breeds. This project uses Streamlit for the web interface, Poetry for dependency management, and Docker to containerize the app.
+Dog_Breed_Classifier is a Convolutional Neural Network (CNN) application based on the ResNet50 model for recognizing among 120 dog breeds. This project uses Streamlit for the web interface, Poetry for dependency management, and Docker to containerize the app.
 
 The model has been trained utilizing the Stanford Dogs dataset. The dataset contains images of 120 breeds of dogs from around the world.
 
