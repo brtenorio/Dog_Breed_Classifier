@@ -7,7 +7,7 @@ if __name__=="__main__":
 	from keras.preprocessing.image import ImageDataGenerator
 	from keras.applications.resnet50 import preprocess_input
 	from keras.models import load_model
-	from dog_breed_classifier.activation_map import activation_map
+	from activation_map import activation_map
 	
 	st.set_page_config(layout="centered")
 	#1. Create a streamlit title widget, this will be shown first
