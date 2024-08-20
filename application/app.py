@@ -7,7 +7,9 @@ if __name__=="__main__":
 	from keras.preprocessing.image import ImageDataGenerator
 	from keras.applications.resnet50 import preprocess_input
 	from keras.models import load_model
+	from dog_breed_classifier.activation_map import activation_map
 	
+	st.set_page_config(layout="centered")
 	#1. Create a streamlit title widget, this will be shown first
 	st.title("DOG BREED CLASSIFIER")
 			
@@ -61,7 +63,13 @@ if __name__=="__main__":
 		ind = int(pred)
 		prediction = class_names[ind]
 		prediction = prediction.replace("_", " ")
+
+		# Get class activation map
+		cam = activation_map(model, image)
+		cam = cam
 			
 		c2.header('Output')
-		c2.subheader('The dogs breed is :')
-		c2.write(prediction )
+		c2.subheader('The dogs breed is : ' + str(prediction))
+		
+		# Display the class activation map
+		c2.image(cam, caption='Class Activation Map', use_column_width="auto")
