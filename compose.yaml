@@ -1,21 +1,3 @@
-services:
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-    command: ["streamlit", "run", "application/app.py",  "--server.port", "8080"]
-  test:
-    build: .
-    volumes:
-      - .:/app
-    command: ["pytest", "tests/test.py"]
-  api:
-    build: .
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-    command: ["uvicorn", "--host", "0.0.0.0", "--port", "8080", "api.api:app"]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:9b9b1f594303e96e2a32bbdc5c2623839d6c5c1a72419e1875deb3bb18406567
+size 420

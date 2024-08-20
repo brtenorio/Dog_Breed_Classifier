@@ -1,7 +1,3 @@
-ipykernel==6.29.5
-numpy>=1.25.2
-scikit-learn==1.3.2
-tensorflow==2.15.0
-scikit-learn==1.3.2
-matplotlib==3.8.1
-streamlit==1.37.0
+version https://git-lfs.github.com/spec/v1
+oid sha256:fcd35c5397f17457d79e740fe41aaf277f5ea5ef5284ba0619a0fcfaa562ec8c
+size 127

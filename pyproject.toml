@@ -1,29 +1,3 @@
-[tool.poetry]
-name = "dog-breed-classifier"
-version = "0.1.0"
-description = "Compute Vision project for classifying among 120 dogs breeds"
-authors = ["brtenorio <b.nunes.bruno@gmail.com>"]
-readme = "README.md"
-
-[tool.poetry.dependencies]
-python = ">3.9.7,<3.12"
-ipykernel = "^6"
-numpy = "^1"
-matplotlib = "^3"
-streamlit = "^1.37.0"
-tensorflow-macos = "2.15.0"
-scikit-learn = "^1.5"
-scipy = "^1"
-joblib = "^1.4"
-threadpoolctl = "^3.5"
-pytest = "^8.3.2"
-setuptools = "^72.1.0"
-wheel = "^0.43.0"
-fastapi = "^0"
-uvicorn = "0.29.0"
-python-multipart = "^0.0.9"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+version https://git-lfs.github.com/spec/v1
+oid sha256:7f75e56d2b96fe7822df983b8659808538addc116f71590d52cd7a3fce65a935
+size 641
