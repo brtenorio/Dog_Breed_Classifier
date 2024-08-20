@@ -15,11 +15,11 @@ RUN git clone https://github.com/brtenorio/Dog_Breed_Classifier.git
 # Set the cloned repo the working directory inside the container
 WORKDIR Dog_Breed_Classifier
 
-# Fetch large files
-RUN git lfs fetch --all 
-
 # Install the app dependencies 
 RUN python3 -m pip install -r requirements.txt
+
+# Fetch large files
+RUN git lfs fetch --all && git pull && git lfs pull
 
 # Expose the port that the app runs on
 EXPOSE 8080
