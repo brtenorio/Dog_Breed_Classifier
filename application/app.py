@@ -3,6 +3,7 @@ if __name__=="__main__":
 	import os
 	import matplotlib.pyplot as plt
 	import numpy as np
+	import pandas as pd
 	from PIL import Image
 	from keras.preprocessing.image import ImageDataGenerator
 	from keras.applications.resnet50 import preprocess_input
@@ -45,10 +46,12 @@ if __name__=="__main__":
 			raise Exception("model not found!")
 		model = load_model(file_name)
 		
-		# Predict the image using the model
-		eval = model.predict(img_transformed)
-		pred = np.argmax(eval,axis=-1)
-
+		# Predict the probabilities using the model
+		prob = model.predict(img_transformed)[0] * 100
+		# get the index of the classes with the maximum score
+		top_classes = np.argsort(-prob)[:5]
+		threshold = 10 # threshold % for displaying the class name
+		
 		# Read external file class_names.txt as dictionary class_names
 		class_names = {}
 		class_names_file = os.path.join(os.path.dirname(__file__) , 'class_names.txt')
@@ -59,17 +62,19 @@ if __name__=="__main__":
 				key, value = line.strip().split(':')
 				class_names[int(key)] = value.strip()
 
-		# Get the predicted class name
-		ind = int(pred)
-		prediction = class_names[ind]
-		prediction = prediction.replace("_", " ")
+		# Get the predicted class name and probability in the class_names dictionary
+		prediction = {class_names[i].replace("_", " "):str(round(prob[i],1))+"%" for i in top_classes if prob[i] > threshold} 
+		# convert the dictionary to a dataframe
+		prediction_df = pd.DataFrame(list(prediction.items()), columns=['Class', 'Probability']).set_index('Class')
+		c2.subheader('Prediction')
+		c2.write(prediction_df)
 
 		# Get class activation map
 		cam = activation_map(model, image)
 		cam = cam
 			
 		c2.header('Output')
-		c2.subheader('The dogs breed is : ' + str(prediction))
+		c2.subheader('The dogs breed is : \n' + str(prediction_df.index[0]))
 		
 		# Display the class activation map
 		c2.image(cam, caption='Class Activation Map', use_column_width="auto")
