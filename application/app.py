@@ -78,3 +78,4 @@ if __name__=="__main__":
 		
 		# Display the class activation map
 		c2.image(cam, caption='Class Activation Map', use_column_width="auto")
+		c2.write('The class activation map shows the regions of the image that the model used to make the prediction.')
